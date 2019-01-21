@@ -6,11 +6,15 @@ class MyTestCase(unittest.TestCase):
 
     def test_get_local_coordinates_zipcode(self):
         coordinates = find_store.get_local_coordinates('94545')
-        self.assertEqual(coordinates, (37.633392, -122.106689))
+        self.assertEqual(coordinates, (37.6362740630492, -122.102387330493))
 
     def test_get_local_coordinates_address(self):
         coordinates = find_store.get_local_coordinates('One Infinite Loop Cupertino, CA')
-        self.assertEqual(coordinates, (37.3321, -122.03074))
+        self.assertEqual(coordinates, (37.3317585, -122.0320474))
+
+    def test_get_local_coordinates_invalid(self):
+        coordinates = find_store.get_local_coordinates('Sea of Tranquility, Moon')
+        self.assertIsNone(coordinates)
 
     def test_get_closest_store(self):
         expected = {'Store Name': 'Cupertino',

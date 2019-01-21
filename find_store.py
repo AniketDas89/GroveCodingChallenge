@@ -18,7 +18,14 @@ def parse_args():
 
 
 def get_local_coordinates(location) -> typing.Tuple[float, float]:
-    geocode = geocoder.mapquest(location)
+    '''
+
+    :param location:
+    :return:
+    '''
+    geocode = geocoder.osm(location)
+    if not geocode.ok:
+        return None
     lat = geocode.json['lat']
     lng = geocode.json['lng']
     return lat, lng
