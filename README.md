@@ -1,6 +1,7 @@
 # Prerequisites
-Make sure you have a connection to the internet to be able to run the geocoding API from OSM
-Ensure the libraries from requirements.txt are installed
+Make sure you have a connection to the internet to be able to run the geocoding API from OSM.
+
+Ensure the libraries from requirements.txt are installed.
 
 # Explanation
 The script works by first figuring out the coordinates of the user's location by leveraging an geocoding API.  This 
