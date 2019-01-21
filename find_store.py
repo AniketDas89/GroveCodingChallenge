@@ -18,8 +18,10 @@ def parse_args():
 
 
 def get_local_coordinates(location) -> typing.Tuple[float, float]:
-
-    return 0.0, 0.0
+    geocode = geocoder.mapquest(location)
+    lat = geocode.json['lat']
+    lng = geocode.json['lng']
+    return lat, lng
 
 
 def find_closest_store(local_coordinates) -> dict:
